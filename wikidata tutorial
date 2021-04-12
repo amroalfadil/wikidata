@@ -1,0 +1,15 @@
+https://query.wikidata.org/#SELECT%20%3Fperson%20%3FpersonLabel%20%3FDOB%20%3Fpic%20%3Foccup%20WHERE%20%7B%0A%20%20%0A%3Fperson%20wdt%3AP31%20wd%3AQ5.%0A%3Fperson%20wdt%3AP69%20wd%3AQ1788342.%0AOPTIONAL%20%7B%3Fperson%20wdt%3AP569%20%3FDB.%7D%0AOPTIONAL%20%7B%3Fperson%20wdt%3AP18%20%3Fpic.%7D%0AOPTIONAL%20%7B%3Fperson%20wdt%3AP18%20%3Foccup.%7D%20%0ASERVICE%20wikibase%3Alabel%20%7Bbd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%7D%0A%20%20%0A%20%20%7D%0AORDER%20BY%20%3FpersonLabel
+
+the slides 
+https://www.dropbox.com/s/05rn8c625c48cwb/IW_Wikidata_RGU.pptx?dl=0
+
+SELECT ?person ?personLabel (YEAR(?DOB) as ?BirthYear) ?pic ?occup WHERE {
+  
+?person wdt:P31 wd:Q5.
+?person wdt:P69 wd:Q1788342.
+OPTIONAL {?person wdt:P569 ?DB.}
+OPTIONAL {?person wdt:P18 ?pic.}
+OPTIONAL {?person wdt:P18 ?occup.} 
+SERVICE wikibase:label {bd:serviceParam wikibase:language "en".}
+  }
+ORDER BY ?personLabel
